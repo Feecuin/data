@@ -1,0 +1,47 @@
+# Project: project.student
+# Makefile created by Dev-C++ 5.3.0.4
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = 未命名3.o 未命名4.o 未命名5.o 未命名6.o 未命名7.o ../password.o 未命名1.o $(RES)
+LINKOBJ  = 未命名3.o 未命名4.o 未命名5.o 未命名6.o 未命名7.o ../password.o 未命名1.o $(RES)
+LIBS     = -L"F:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"F:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"F:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+BIN      = project.student.exe
+CXXFLAGS = $(CXXINCS)  -g3
+CFLAGS   = $(INCS)  -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+未命名3.o: 未命名3.c
+	$(CC) -c 未命名3.c -o 未命名3.o $(CFLAGS)
+
+未命名4.o: 未命名4.c
+	$(CC) -c 未命名4.c -o 未命名4.o $(CFLAGS)
+
+未命名5.o: 未命名5.c
+	$(CC) -c 未命名5.c -o 未命名5.o $(CFLAGS)
+
+未命名6.o: 未命名6.c
+	$(CC) -c 未命名6.c -o 未命名6.o $(CFLAGS)
+
+未命名7.o: 未命名7.c
+	$(CC) -c 未命名7.c -o 未命名7.o $(CFLAGS)
+
+../password.o: ../password.c
+	$(CC) -c ../password.c -o ../password.o $(CFLAGS)
+
+未命名1.o: 未命名1.c
+	$(CC) -c 未命名1.c -o 未命名1.o $(CFLAGS)
